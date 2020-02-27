@@ -10,10 +10,18 @@ class TestDeck(unittest.TestCase):
         self.deck.build()
 
     def test_shuffle(self):
+        self.deck.build()
         self.deck.shuffle()
 
     def test_show(self):
+        self.deck.build()
+        self.deck.shuffle()
         self.deck.show()
+
+    def test_draw(self):
+        self.deck.build()
+        self.deck.shuffle()
+        self.deck.draw()
 
 
 if __name__ == "__main__":

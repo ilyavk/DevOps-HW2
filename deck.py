@@ -22,9 +22,5 @@ class Deck:
             r = random.randint(0, i)
             self.cards[i], self.cards[r] = self.cards[r], self.cards[i]
 
-
-if __name__ == "__main__":
-    deck = Deck();
-    deck.build()
-    deck.shuffle()
-    deck.show()
+    def draw(self):
+        return self.cards.pop() # pops a car of the top of the deck
