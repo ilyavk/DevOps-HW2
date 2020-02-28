@@ -27,8 +27,9 @@ class Blackjack:
         return total
 
     def showHand(self, person):
-        print("-{} holds ".format(person.name))
+        print("~{} holds~".format(person.name))
         person.showHand()
+        print()
 
     def hit(self, person):
         person.draw(self.deck)
@@ -38,8 +39,8 @@ class Blackjack:
 
 
 if __name__ == "__main__":
-    won = False
-    while input("Would you like to play Blackjack? (y/n)") == "y":
+    while input("\nWould you like to play Blackjack? (y/n)") == "y":
+        won = False
         game = Blackjack()
         game.deal()
         game.showHand(game.dealer)
@@ -47,18 +48,21 @@ if __name__ == "__main__":
 
         print("The dealer has a total of {}".format(game.total(game.dealer)))
         print("The gambler has a total of {}".format(game.total(game.gambler)))
+        print()
 
         while input("Does the dealer want to hit? (y/n)") == "y":
             game.hit(game.dealer)
-            print("The dealer has a total of {}".format(game.total(game.dealer)))
+            print("The dealer has a total of {}\n".format(game.total(game.dealer)))
             if game.total(game.dealer) > 21:
                 won = True
                 print("Dealer busted. Gambler wins!!")
                 break
 
+        print("\n")
+
         while won == False and input("Does the gambler want to hit? (y/n)") == "y":
             game.hit(game.gambler)
-            print("The gambler has a total of {}".format(game.total(game.gambler)))
+            print("The gambler has a total of {}\n".format(game.total(game.gambler)))
             if game.total(game.gambler) > 21:
                 print("Gambler busted. Dealer wins!!")
                 break
