@@ -11,4 +11,7 @@ class Player:
         for card in self.hand:
             card.show()
 
+    def clearHand(self):
+        self.hand.clear()
+
             

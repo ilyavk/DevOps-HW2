@@ -5,3 +5,6 @@ class Card:
 
     def show(self):
         print("{} of {}".format(self.value, self.suit))
+
+    def cardValue(self):
+        return self.value
